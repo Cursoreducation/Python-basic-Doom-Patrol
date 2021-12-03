@@ -1,0 +1,64 @@
+1.
+55 is 9790336
+cursor is 140646025563376
+set of 1 2 3 is 140646025530720
+list 1 2 3 140646024986560
+dict "a" : 1 "b" : 2 "c" : 3 is 140646026388672
+2.
+140646024986560
+3.
+int_a = 55 : <class 'int'>, str_b = cursor : <class 'str'>
+set_c = {1, 2, 3} : <class 'set'>, lst_d = [1, 2, 3] : <class 'list'>
+dict_e = {'a' : 1, 'b' : 2, 'c' : 3} : <class 'dict'>
+4.
+int_a = 55 isinstance(var,int): True
+str_b = cursor isinstance(var,str): True
+set_c = {1, 2, 3} isinstance(var,set): True
+lst_d = [1, 2, 3] isinstance(var,(list,set)): True
+dict_e = {'a' : 1, 'b' : 2, 'c' : 3} isinstance(var,dict): True
+5.
+Anna has 1 apples and 7 peaches.
+6.
+Anna has 1 apples and 7 peaches.
+7.
+Anna has 7 apples and 1 peaches.
+8.
+Anna has     7 apples and   1 peaches.
+9.
+Anna has 7 apples and 1 peaches.
+10.
+Anna has 7 apples and 1 peaches.
+11.
+Anna has 7 apples and 1 peaches.
+12.
+[0, 1, 16, 9, 256, 25, 1296, 49, 4096, 81]
+13.
+[0, 10, 1, 30, 2, 50, 3, 70, 4, 90]
+14.
+{1: 1, 3: 9, 5: 25, 7: 49, 9: 81}
+15.
+{1: 1, 2: 4.0, 3: 9, 4: 8.0, 5: 25, 6: 12.0, 7: 49, 8: 16.0, 9: 81, 10: 20.0}
+16.
+{0: 0, 2: 8, 4: 64, 6: 216, 8: 512}
+17.
+{0: 0, 1: 1, 2: 8, 3: 3, 4: 64, 5: 5, 6: 216, 7: 7, 8: 512, 9: 9}
+18.
+2
+19.
+6
+20.
+[1, 5, 13, 15, 18, 24, 33, 55]
+21.
+[55, 33, 24, 18, 15, 13, 5, 1]
+22.
+[110, 66, 48, 36, 30, 26, 10, 2]
+23.
+[7, 9, 11]
+24.
+164
+25.
+[55, 33, 15, 13, 5, 1]
+26.
+[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+27.
+[2, 3, 5, 7]
