@@ -145,7 +145,7 @@ print(lst_to_sort2)
 print("23.")
 list_a = [2, 3, 4]
 list_b = [5, 6, 7]
-list_c = list(map(lambda x, y: x + y, list_a, list_b))
+list_c = list(map(lambda x, y: x ** y, list_a, list_b))
 print(list_c)
 
 # 24. Use reduce and lambda to compute the numbers of a lst_to_sort.
