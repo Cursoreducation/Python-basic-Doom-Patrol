@@ -152,8 +152,7 @@ print(list(map(lambda x: x * 2, lst_to_sort)))
 # 23
 list_a = [2, 3, 4]
 list_b = [5, 6, 7]
-list_c = []
-list_c = (list_a[0]**list_b[0], list_a[1]**list_b[1], list_a[2]**list_b[2])
+list_c = list(map(lambda x, y: x+y, list_a, list_b))
 print(list_c)  # (32, 729, 16384)
 
 # 24
