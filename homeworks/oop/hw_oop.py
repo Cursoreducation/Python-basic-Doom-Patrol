@@ -76,14 +76,24 @@ for animal in wild_animals:
 # 8. Create class City with name, population instance attributes, return a new instance only when population > 1500,
 #    otherwise return message: "Your city is too small".
 class City:
+    min_limit = 1500
+
     def __init__(self, name, population):
         self.name = name
         self.population = population
 
     def get_population(self):
-        if self.population < 1500:
-            return "Your city is too small"
         return self.population
+
+    def __le__(self, other):
+        if self.population <= other.min_limit:
+            return f"Your city {self.name} is too small"
+        return f"Your city {self.name} population is {self.population}"
+
+    def __call__(self):
+        if self.population < self.min_limit:
+            return f"Your city {self.name} is too small"
+        return f"Your city {self.name} population is {self.population}"
 
 
 tokyo = City("Tokyo", 37435191)
@@ -93,5 +103,6 @@ pidkovka = City("Pidkovka", 800)
 cities = (tokyo, delhi, pidkovka)
 
 for i in cities:
-    print(i.get_population())
+    print(i.__le__(pidkovka))
+    print(i.__call__())
 
