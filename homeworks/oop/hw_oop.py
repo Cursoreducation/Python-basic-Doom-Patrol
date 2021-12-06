@@ -1,4 +1,6 @@
 # 1. Create a Vehicle class with max_speed and mileage instance attributes
+
+
 class Vehicle:
     def __init__(self, max_speed, mileage):
         self.max_speed = max_speed
@@ -11,6 +13,7 @@ print(my_vehicle)
 # 2. Create a child class Bus that will inherit all the variables and
 #    methods of the Vehicle class and will have seating_capacity own method
 
+
 class Bus(Vehicle):
     def __init__(self, max_speed, mileage, seat_capacity):
         Vehicle.__init__(self, max_speed, mileage)
@@ -19,17 +22,20 @@ class Bus(Vehicle):
     def seating_capacity(self):
         self.seat_capacity = input('Input count of seats: ')
 
+
 my_bus = Bus(90, 300, 20)
 
-# 3. Determine which class a given Bus object belongs to (Check type of an object)
+# 3. Determine which class a given Bus object belongs to (type)
 print(type(my_bus))
-print(isinstance(my_bus, Vehicle))
 
-# 4. Create an instance of Bus named school_bus and determine if school_bus is also an instance of the Vehicle class
+# 4. Create an instance of Bus named school_bus and determine
+#    if school_bus is also an instance of the Vehicle class
 school_bus = Bus(80, 200, 30)
 print(isinstance(school_bus, Vehicle))
 
-# 5. Create a new class School with get_school_id and number_of_students instance attributes
+# 5. Create class School with get_school_id, number_of_students instance attr
+
+
 class School:
     def __init__(self, school_id, number_of_students):
         self.school_id = school_id
@@ -38,19 +44,27 @@ class School:
     def get_school_id(self):
         return self.school_id
 
-# 6*. Create a new class SchoolBus that will inherit all the methods from School
-#     and Bus and will have its own - bus_school_color
-class SchoolBus(School,Bus):
-    def __init__(self, school_id, number_of_students, max_speed, mileage, seat_capacity, bus_school_color):
+# 6*. Create a new class SchoolBus that will inherit all the methods
+#     from School and Bus and will have its own - bus_school_color
+
+
+class SchoolBus(School, Bus):
+    def __init__(self, school_id, number_of_students, max_speed,
+                 mileage, seat_capacity, bus_school_color):
         School.__init__(self, school_id, number_of_students)
         Bus.__init__(self, max_speed, mileage, seat_capacity)
         self.bus_school_color = bus_school_color
 
+
 my_schoolBus = SchoolBus(25, 300, 60, 110, 30, "yellow")
 print(my_schoolBus.bus_school_color)
 
-# 7. Polymorphism: Create two classes: Bear, Wolf. Both of them should have make_sound method. Create two instances, one of Bear and one of Wolf,
-#    make a tuple of it and by using for call their action using the same method.
+# 7. Polymorphism: Create two classes: Bear, Wolf. Both of them should
+#    have make_sound method. Create two instances, one of Bear and
+#    one of Wolf, make a tuple of it and by using for call their action
+#    using the same method.
+
+
 class Bear:
     def __init__(self, sound):
         self.sound = sound
@@ -58,12 +72,14 @@ class Bear:
     def make_sound(self):
         return ("Bear says " + self.sound)
 
+
 class Wolf:
     def __init__(self, sound):
         self.sound = sound
 
     def make_sound(self):
-        return ("Wolf says " + self.sound)
+        return (f"Wolf says {self.sound}")
+
 
 bear = Bear("Grr")
 wolf = Wolf("Ayy")
@@ -73,8 +89,11 @@ for animal in wild_animals:
     print(animal.make_sound())
 
 #    Magic methods:
-# 8. Create class City with name, population instance attributes, return a new instance only when population > 1500,
+# 8. Create class City with name, population instance attributes,
+#    return a new instance only when population > 1500,
 #    otherwise return message: "Your city is too small".
+
+
 class City:
     min_limit = 1500
 
@@ -105,4 +124,3 @@ cities = (tokyo, delhi, pidkovka)
 for i in cities:
     print(i.__le__(pidkovka))
     print(i.__call__())
-
