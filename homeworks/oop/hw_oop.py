@@ -95,7 +95,10 @@ for animal in wild_animals:
 
 
 class City:
-    min_limit = 1500
+    def __new__(cls, name, population):
+        if population <= 1500:
+            return None
+        return object.__new__(cls)
 
     def __init__(self, name, population):
         self.name = name
@@ -103,16 +106,6 @@ class City:
 
     def get_population(self):
         return self.population
-
-    def __le__(self, other):
-        if self.population <= other.min_limit:
-            return f"Your city {self.name} is too small"
-        return f"Your city {self.name} population is {self.population}"
-
-    def __call__(self):
-        if self.population < self.min_limit:
-            return f"Your city {self.name} is too small"
-        return f"Your city {self.name} population is {self.population}"
 
 
 tokyo = City("Tokyo", 37435191)
@@ -122,5 +115,4 @@ pidkovka = City("Pidkovka", 800)
 cities = (tokyo, delhi, pidkovka)
 
 for i in cities:
-    print(i.__le__(pidkovka))
-    print(i.__call__())
+    print(type(i))
