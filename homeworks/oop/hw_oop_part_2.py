@@ -123,9 +123,10 @@ print(pasta_2.ingredients)
 
 
 # 5.
-# Make class, which has max_visitors_num attribute and its instances will have visitors_count attribute.
-# In case of setting visitors_count - max_visitors_num should be checked,
-# if visitors_count value is bigger than max_visitors_num - visitors_count should be assigned with max_visitors_num.
+# Make class, which has max_visitors_num attribute and its instances will have
+# visitors_count attribute. In case of setting visitors_count -
+# max_visitors_num should be checked, if visitors_count value is bigger than
+# max_visitors_num - visitors_count should be assigned with max_visitors_num.
 # Example:
 #     Concert.max_visitor_num = 50
 #     concert = Concert()
