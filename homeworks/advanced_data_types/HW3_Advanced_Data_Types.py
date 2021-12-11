@@ -192,7 +192,6 @@ print(sorted(lst_to_sort, reverse=True))
 lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
 lst_to_sort2 = list(map(lambda x: x * 2, lst_to_sort))
 print(lst_to_sort2)
-print('pause')  #checking solution
 
 # 23*. Raise each list number to the corresponding number on another list:
 list_a = [2, 3, 4]
@@ -200,16 +199,28 @@ list_b = [5, 6, 7]
 
 list_c = [list_a[x] ** list_b[x] for x in range(3)]
 print(list_c)
-print(4 ** 7)
-# # lst = []
-# # for num in range(10):
-# #     if num % 2 == 1:
-# #         lst.append(num ** 2)
-# #     else:
-# #         lst.append(num ** 4)
-# # print(lst)
-#
-# # 12. Convert (1) to list comprehension
-#
-# lst_comp1 = [num ** 2 if num % 2 == 1 else num ** 4 for num in range(10)]
-# print(lst_comp1)
+
+# 24. Use reduce and lambda to compute the numbers of a lst_to_sort.
+import functools
+
+lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+
+print(functools.reduce(lambda a, b: a + b, lst_to_sort))
+
+# 25. Use filter and lambda to filter the number of a lst_to_sort with elem % 2 == 1.
+lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+lst_to_sort2 = list(filter(lambda x: x % 2 == 1, lst_to_sort))
+print(lst_to_sort2)
+
+# 26. Considering the range of values: b = range(-10, 10), use the function filter to return only negative numbers.
+
+b = range(-10, 10)
+neg_lst = list(filter(lambda x: x < 0, b))
+print(neg_lst)
+print("____________________________________")
+# 27*. Using the filter function, find the values that are common to the two lists:
+list_1 = [1,2,3,5,7,9]
+list_2 = [2,3,5,6,7,8]
+
+similar_val = list(filter(lambda x: x in list_1, list_2))
+print(similar_val)
