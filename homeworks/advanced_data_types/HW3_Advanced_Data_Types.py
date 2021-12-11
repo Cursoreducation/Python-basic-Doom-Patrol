@@ -1,3 +1,5 @@
+import functools
+
 # 1. Define the id of next variables:
 # int_a = 55
 # str_b = 'cursor'
@@ -39,7 +41,7 @@ print(isinstance(set_c, set))
 print(isinstance(lst_d, set))
 print(isinstance(dict_e, dict))
 
-#----------------------------------FORMATTING----------------------------------------
+# ----------------------------------FORMATTING----------------------------------------
 # String formatting:
 # Replace the placeholders with a value:
 # "Anna has ___ apples and ___ peaches."
@@ -54,7 +56,7 @@ print("Anna has {1} apples and {0} peaches.".format(13, 666))
 
 # 7. By using keyword arguments into the curly braces.
 
-print("Anna has {a_num} apples and {p_num} peaches.".format(a_num = 13, p_num = 666))
+print("Anna has {a_num} apples and {p_num} peaches.".format(a_num=13, p_num=666))
 
 # 8*. With indicators of field size (5 chars for the first and 3 for the second)
 
@@ -76,7 +78,7 @@ print("Anna has %d apples and %d peaches." % (666, 13))
 dct_fruit = {'apples': 6, 'peaches': 12}
 print("Anna has %(apples)d apples and %(peaches)d peaches." % dct_fruit)
 
-#---------------------------------------COMPREHENSIONS------------------------------------------------------
+# ---------------------------------------COMPREHENSIONS------------------------------------------------------
 # Comprehensions:
 # (1)
 # lst = []
@@ -113,7 +115,7 @@ print(lst2)
 # #
 # 14. Convert (3) to dict comprehension.
 
-dct_comp = {num: num ** 2 for num in range(1, 11) if num % 2 == 1 }
+dct_comp = {num: num ** 2 for num in range(1, 11) if num % 2 == 1}
 print(dct_comp)
 
 # (4)
@@ -127,7 +129,7 @@ print(dct_comp)
 #
 # 15*. Convert (4) to dict comprehension.
 
-dct_comp2 = {num: num ** 2 if num % 2 == 1 else num // 0.5 for num in range (1,11)}
+dct_comp2 = {num: num ** 2 if num % 2 == 1 else num // 0.5 for num in range(1, 11)}
 print(dct_comp2)
 
 # (5)
@@ -152,7 +154,7 @@ for x in range(10):
         dct2[x] = x
 print(dct2)
 
-#-------------------------------LAMBDA------------------------------------------------
+# -------------------------------LAMBDA------------------------------------------------
 # (7)
 # def foo(x, y):
 #     if x < y:
@@ -161,23 +163,27 @@ print(dct2)
 #         return y
 # 18. Convert (7) to lambda function
 
-func1 = lambda x, y: x if x < y else y
-print(func1(3, 2))
+func_1 = lambda x, y: x if x < y else y
+print(func_1(3, 2))
+
 
 # (8)
 # foo = lambda x, y, z: z if y < x and x > z else y
 # 19*. Convert (8) to regular function
 
-def func2(x ,y, z):
+
+def func2(x, y, z):
     if y < x and x > z:
         return z
     else:
         return y
+
+
 print(func2(3, 2, 1))
 
 # --------------------------------------LIST SORT-----------------------------------
 #
-#lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+# lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
 #
 # 20. Sort lst_to_sort from min to max
 
@@ -201,7 +207,7 @@ list_c = [list_a[x] ** list_b[x] for x in range(3)]
 print(list_c)
 
 # 24. Use reduce and lambda to compute the numbers of a lst_to_sort.
-import functools
+
 
 lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
 
@@ -217,10 +223,10 @@ print(lst_to_sort2)
 b = range(-10, 10)
 neg_lst = list(filter(lambda x: x < 0, b))
 print(neg_lst)
-print("____________________________________")
+
 # 27*. Using the filter function, find the values that are common to the two lists:
-list_1 = [1,2,3,5,7,9]
-list_2 = [2,3,5,6,7,8]
+list_1 = [1, 2, 3, 5, 7, 9]
+list_2 = [2, 3, 5, 6, 7, 8]
 
 similar_val = list(filter(lambda x: x in list_1, list_2))
 print(similar_val)
