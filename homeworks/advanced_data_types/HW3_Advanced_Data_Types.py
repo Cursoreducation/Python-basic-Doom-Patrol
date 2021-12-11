@@ -39,6 +39,7 @@ print(isinstance(set_c, set))
 print(isinstance(lst_d, set))
 print(isinstance(dict_e, dict))
 
+#----------------------------------FORMATTING----------------------------------------
 # String formatting:
 # Replace the placeholders with a value:
 # "Anna has ___ apples and ___ peaches."
@@ -151,6 +152,7 @@ for x in range(10):
         dct2[x] = x
 print(dct2)
 
+#-------------------------------LAMBDA------------------------------------------------
 # (7)
 # def foo(x, y):
 #     if x < y:
@@ -172,3 +174,42 @@ def func2(x ,y, z):
     else:
         return y
 print(func2(3, 2, 1))
+
+# --------------------------------------LIST SORT-----------------------------------
+#
+#lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+#
+# 20. Sort lst_to_sort from min to max
+
+lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+print(sorted(lst_to_sort))
+
+# 21. Sort lst_to_sort from max to min
+lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+print(sorted(lst_to_sort, reverse=True))
+
+# 22. Use map and lambda to update the lst_to_sort by multiply each element by 2
+lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
+lst_to_sort2 = list(map(lambda x: x * 2, lst_to_sort))
+print(lst_to_sort2)
+print('pause')  #checking solution
+
+# 23*. Raise each list number to the corresponding number on another list:
+list_a = [2, 3, 4]
+list_b = [5, 6, 7]
+
+list_c = [list_a[x] ** list_b[x] for x in range(3)]
+print(list_c)
+print(4 ** 7)
+# # lst = []
+# # for num in range(10):
+# #     if num % 2 == 1:
+# #         lst.append(num ** 2)
+# #     else:
+# #         lst.append(num ** 4)
+# # print(lst)
+#
+# # 12. Convert (1) to list comprehension
+#
+# lst_comp1 = [num ** 2 if num % 2 == 1 else num ** 4 for num in range(10)]
+# print(lst_comp1)
