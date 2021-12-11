@@ -129,3 +129,46 @@ print(dct_comp)
 dct_comp2 = {num: num ** 2 if num % 2 == 1 else num // 0.5 for num in range (1,11)}
 print(dct_comp2)
 
+# (5)
+# dict_comprehension = {x: x**3 for x in range(10) if x**3 % 4 == 0}
+# 16. Convert (5) to regular for with if.
+
+dct1 = {}
+for x in range(10):
+    if x ** 3 % 4 == 0:
+        dct1[x] = x ** 3
+print(dct1)
+
+# (6)
+# dict_comprehension = {x: x**3 if x**3 % 4 == 0 else x for x in range(10)}
+# 17*. Convert (6) to regular for with if-else.
+
+dct2 = {}
+for x in range(10):
+    if x ** 3 % 4 == 0:
+        dct2[x] = x ** 3
+    else:
+        dct2[x] = x
+print(dct2)
+
+# (7)
+# def foo(x, y):
+#     if x < y:
+#         return x
+#     else:
+#         return y
+# 18. Convert (7) to lambda function
+
+func1 = lambda x, y: x if x < y else y
+print(func1(3, 2))
+
+# (8)
+# foo = lambda x, y, z: z if y < x and x > z else y
+# 19*. Convert (8) to regular function
+
+def func2(x ,y, z):
+    if y < x and x > z:
+        return z
+    else:
+        return y
+print(func2(3, 2, 1))
