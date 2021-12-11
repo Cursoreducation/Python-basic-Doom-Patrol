@@ -67,3 +67,65 @@ p_num = 666
 print(f"Anna has {a_num} apples and {p_num} peaches.")
 
 # 10. With % operator
+
+print("Anna has %d apples and %d peaches." % (666, 13))
+
+# 11*. With variable substitutions by name (hint: by using dict)
+
+dct_fruit = {'apples': 6, 'peaches': 12}
+print("Anna has %(apples)d apples and %(peaches)d peaches." % dct_fruit)
+
+#---------------------------------------COMPREHENSIONS------------------------------------------------------
+# Comprehensions:
+# (1)
+# lst = []
+# for num in range(10):
+#     if num % 2 == 1:
+#         lst.append(num ** 2)
+#     else:
+#         lst.append(num ** 4)
+# print(lst)
+
+# 12. Convert (1) to list comprehension
+
+lst_comp1 = [num ** 2 if num % 2 == 1 else num ** 4 for num in range(10)]
+print(lst_comp1)
+
+# (2)
+# list_comprehension = [num // 2 if num % 2 == 0 else num * 10 for num in range(10)]
+# 13. Convert (2) to regular for with if-else
+
+lst2 = []
+for num in range(10):
+    if num % 2 == 0:
+        lst2.append(num // 2)
+    else:
+        lst2.append(num * 10)
+print(lst2)
+
+# (3)
+# d = {}
+# for num in range(1, 11):
+#     if num % 2 == 1:
+#         d[num] = num ** 2
+# print(d)
+# #
+# 14. Convert (3) to dict comprehension.
+
+dct_comp = {num: num ** 2 for num in range(1, 11) if num % 2 == 1 }
+print(dct_comp)
+
+# (4)
+# d = {}
+# for num in range(1, 11):
+#     if num % 2 == 1:
+#         d[num] = num ** 2
+#     else:
+#         d[num] = num // 0.5
+# print(d)
+#
+# 15*. Convert (4) to dict comprehension.
+
+dct_comp2 = {num: num ** 2 if num % 2 == 1 else num // 0.5 for num in range (1,11)}
+print(dct_comp2)
+
