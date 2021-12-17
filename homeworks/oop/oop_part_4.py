@@ -1,7 +1,9 @@
 # # **Garden**
 # We have only one garden. In the garden can have vegetables, fruits and pests.
-# Each fruit or vegetable should have a stage of maturity (stages: None, Flowering, Green, Red).
-# Pests can eat only green and red fruit or vegetable. Once pests eat the fruit, it should be removed.
+# Each fruit or vegetable should have a stage of maturity
+# (stages: None, Flowering, Green, Red).
+# Pests can eat only green and red fruit or vegetable.
+# Once pests eat the fruit, it should be removed.
 
 # ## There is a Tomato with the following characteristics:
 # 1. Number of tomatoes (Index)
@@ -117,7 +119,8 @@ class Tomato(Vegetables):
         return self.state == 3
 
     def grow_info(self):
-        print(f'{self.vegetable_type} - {self.tomatoes_index}: {stages[self.state]}')
+        print(f'{self.vegetable_type} - {self.tomatoes_index}: '
+              f'{stages[self.state]}')
 
     def get_state(self):
         return self.state
@@ -125,10 +128,11 @@ class Tomato(Vegetables):
 
 class TomatoBush:
     def __init__(self, number_of_tomatoes, number_of_pests):
-        self.all_tomatoes = [Tomato('Cherry', index) for index in range(number_of_tomatoes)]
+        self.all_tomatoes = [Tomato('Cherry', index)
+                             for index in range(number_of_tomatoes)]
         self.all_pests = [Pests(index, 'Veggies', self.all_tomatoes)
                           for index in range(number_of_pests)]
-        
+
     def grow_all(self):
         for tomato in self.all_tomatoes:
             tomato.grow()
@@ -189,9 +193,6 @@ class AppleTree:
 
     def is_ripe_for_pests(self):
         return any([apple.get_state() > 1 for apple in self.all_apples])
-
-    def delete_pests(self, pests_list):
-        pass
 
     def eaten_by_pests(self):
         self.all_apples = []
