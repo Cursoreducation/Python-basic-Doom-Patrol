@@ -1,0 +1,13 @@
+1. Create calculator app which will write results to file.
+User Input
+3
++
+4
+Output in result.txt
+3 + 4 = 7
+User Input:
+6
+-
+1
+Output in result.txt
+6 - 1 = 5
