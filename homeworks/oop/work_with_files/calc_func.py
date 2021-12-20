@@ -14,6 +14,8 @@ def multiply(x, y):
 
 
 def divide(x, y):
+    if y == 0:
+        return convert_to_str_line(x, y, "Ho ho ho, don't break me")
     return convert_to_str_line(x, y, x / y)
 
 
@@ -32,13 +34,9 @@ def convert_to_str_line(x, y, res):
 
     frame = inspect.currentframe()
     call_frame = inspect.getouterframes(frame, 2)
-    call_func = call_frame[1][3]
+    call_func = (call_frame[1][3]).lower()
 
-    for i in operations.values():
-        if i[0] == call_func:
-            operation = i[1]
-
-    return f'{x} {operation} {y} = {res}'
+    return f'{x} {operations[call_func]} {y} = {res}'
 
 
 def write_to_file(path, text):

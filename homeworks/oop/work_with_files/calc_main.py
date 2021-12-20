@@ -19,24 +19,28 @@ from globals import *
 """
 
 clear_file("output_results/result.txt")
-stop = False
+proceed = "y"
 
-while not stop:
+while proceed == "y":
 
-    operation = int(input("Choose one operation: \n"
-                          "1. Add \n"
-                          "2. Subtract \n"
-                          "3. Multiply \n"
-                          "4. Divide \n"
-                          "5. Power by N\n"
-                          "6. Stop \n"))
+    proceed = input("Do You want to calculate Y/N: \n")
 
-    if operation == 6:
-        stop = True
-    else:
+    if proceed.lower() == 'y':
         x = input("First value: ")
+        operation = input("Choose one operation: \n"
+                          "Add: + \n"
+                          "Subtract: - \n"
+                          "Multiply: * \n"
+                          "Divide: / \n"
+                          "Power by N: ** \n")
         y = input("Second Value: ")
 
-        if operation in operations.keys():
+        if operation not in operations.values():
+            print("Hm... I don't know how to calculate =(((")
+        else:
+            for key in operations.keys():
+                if operation == operations[key]:
+                    func = key
+
             write_to_file("output_results/result.txt",
-                          eval(operations[operation][0] + "(" + x + "," + y + ")"))
+                          eval(func + "(" + x + "," + y + ")"))
