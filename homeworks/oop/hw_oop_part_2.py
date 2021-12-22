@@ -268,17 +268,12 @@ class Celsius:
     Hint: (temperature * 1.8) + 32)
     """
     def __init__(self, temperature=0):
-        self._temperature = temperature
+        self.temperature = temperature
 
     @property
-    def temperature(self):
-        return self._temperature
-
-    @temperature.setter
-    def temperature(self, new_temperature):
-        self._temperature = new_temperature
+    def convert_to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
 
 
 f_temp = Celsius(12)
-f_temp.temperature = (f_temp.temperature * 1.8) + 32
-print(f_temp.temperature)
+print(f_temp.convert_to_fahrenheit)
