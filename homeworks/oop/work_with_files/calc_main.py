@@ -1,6 +1,5 @@
-from calc_func import *
-from globals import *
-
+from global_defines import *
+from calc_func import add, subtract, divide, multiply, power_by, clear_file, write_to_file
 
 """
     Calculator program
@@ -15,7 +14,7 @@ from globals import *
     
     calc_main.py - main module for interaction with user
     calc_func.py - module with all calculation and working with files methods
-    globals.py - global variables and imports
+    global_defines.py - global variables and imports
 """
 
 clear_file("output_results/result.txt")

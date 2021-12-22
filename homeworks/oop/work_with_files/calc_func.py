@@ -1,4 +1,4 @@
-from globals import *
+from global_defines import *
 
 
 def add(x, y):
