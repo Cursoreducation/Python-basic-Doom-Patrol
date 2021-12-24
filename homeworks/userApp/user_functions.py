@@ -34,13 +34,13 @@ def user_add():
     all_users_data_json = file.read()
     file.close()
 
-#  hw 1
+    #  hw 1
     try:
         all_users_data = json.loads(all_users_data_json)
     except ValueError:
         logging.critical("JSONDecodeError")
         with open(Config.PATH_TO_USERS_FILE, "w") as write_file:
-            write_file.write("[]")
+            write_file.write(json.dumps("[]"))
         all_users_data = []
     finally:
         pass
@@ -87,12 +87,22 @@ def update_user():
     file = open(Config.PATH_TO_USERS_FILE, 'r')
     users = json.loads(file.read())
     file.close()
-    id = int(input("Type id of user which you want to update: "))
+
+    # hw 2
+    try:
+        user_id = int(input("Type id of user which you want to update: "))
+    except ValueError:
+        print("user id should be integer value")
+        logging.error("Id should be integer")
+        return
+    finally:
+        pass
+
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
     email = input("Email: ")
     for user in users:
-        if user['id'] == id:
+        if user['id'] == user_id:
             user['first_name'] = first_name
             user['last_name'] = last_name
             user['Email'] = email

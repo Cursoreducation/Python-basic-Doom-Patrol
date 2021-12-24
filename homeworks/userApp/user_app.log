@@ -33,3 +33,14 @@ INFO:root:Search
 WARNING:root:User trying to search query which not in fields list
 INFO:root:Search
 INFO:root:Search
+INFO:root:User Add
+INFO:root:User Add
+CRITICAL:root:JSONDecodeError
+INFO:root:Get All!
+INFO:root:Update!
+INFO:root:Update!
+INFO:root:Get All!
+INFO:root:Update!
+ERROR:root:Id should be integer
+INFO:root:Update!
+ERROR:root:Id should be integer
