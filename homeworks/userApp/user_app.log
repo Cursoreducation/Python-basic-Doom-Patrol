@@ -44,3 +44,5 @@ INFO:root:Update!
 ERROR:root:Id should be integer
 INFO:root:Update!
 ERROR:root:Id should be integer
+INFO:root:User Add
+CRITICAL:root:JSONDecodeError

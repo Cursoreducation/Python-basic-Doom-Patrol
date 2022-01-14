@@ -19,6 +19,6 @@ class FunctionsTest(unittest.TestCase):
         self.assertEqual(fft.multiple(25, 4), 100)
 
     def test_div(self):
-        self.assertEqual(fft.div(10, 5), 2, msg='equal test')
-        self.assertNotEqual(fft.div(25, 3), 7, msg='not equal test')
-        self.assertEqual(fft.div(1000, 500), 2, msg='equal test')
+        self.assertEqual(fft.div(10, 5), 1, msg='equal test')
+        self.assertNotEqual(fft.div(25, 5), 5, msg='not equal test')
+        self.assertEqual(fft.div(1000, 500), 3, msg='equal test')

@@ -48,15 +48,18 @@ def multiply(a, b, c, d, e):
 
 print(multiply(5, 5, 5, 5, 5))  # 3125
 
+
+# -----------------------------------------------------------------------------
 # 3.* logged
-# Write a decorator which wraps functions to log function arguments and the return value on each call.
-# Provide support for both positional and named arguments (your wrapper function should take both *args
+# Write a decorator which wraps functions to log function arguments and
+# the return value on each call. Provide support for both positional and named
+# arguments (your wrapper function should take both *args
 # and **kwargs and print them both):
 
 
 def logged(inner_func):
     # log function arguments and its return value
-    def inner(*args):
+    def inner(*args, **kwargs):
         return inner_func(*args)
 
     return inner
@@ -71,11 +74,11 @@ print(func(4, 4, 4))
 # you called func(4, 4, 4)
 # it returned 6
 
-
+# -----------------------------------------------------------------------------
 # 4. type_check
 # you should be able to pass 1 argument to decorator - type.
 # decorator should check if the input to the function is correct based on type.
-# If it is wrong, it should print(f"Wrong Type: {type}"), otherwise function should be executed.
+# If wrong, then print(f"Wrong Type: {type}"), otherwise it should be executed.
 
 def type_check(correct_type):
     def inner(inner_func):
@@ -83,7 +86,8 @@ def type_check(correct_type):
             if isinstance(args[0], correct_type):
                 return inner_func(args[0])
             else:
-                print(f"Wrong Type: {type(args[0])}")
+                return f"Wrong Type: {type(args[0])}"
+
         return wrapper
     return inner
 

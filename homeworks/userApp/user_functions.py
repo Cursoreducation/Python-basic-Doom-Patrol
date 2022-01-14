@@ -60,11 +60,11 @@ def user_add():
 def get_all():
     with open(Config.PATH_TO_USERS_FILE, 'r') as file:
         users = json.loads(file.read())
-        for user in users:
-            print("User #" + str(user['id']))
-            print("First Name: " + user['first_name'])
-            print("Last Name: " + user['last_name'])
-            print("Email: " + user['Email'])
+    for user in users:
+        print("User #" + str(user['id']))
+        print("First Name: " + user['first_name'])
+        print("Last Name: " + user['last_name'])
+        print("Email: " + user['Email'])
 
 
 def search_by(search_str, what_to_search):
