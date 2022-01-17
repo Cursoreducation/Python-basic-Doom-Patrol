@@ -1,0 +1,2 @@
+1. Rewrite the decorator "fare" from first task to use Class instead of function.
+2*. Rewrite the decorator "logger" from fifth task to use Class instead of function and without passing args to decorator.
