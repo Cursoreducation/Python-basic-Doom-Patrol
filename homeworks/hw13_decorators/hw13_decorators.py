@@ -80,6 +80,7 @@ print(func(4, 4, 4))
 # decorator should check if the input to the function is correct based on type.
 # If wrong, then print(f"Wrong Type: {type}"), otherwise it should be executed.
 
+
 def type_check(correct_type):
     def inner(inner_func):
         def wrapper(*args):
@@ -98,7 +99,8 @@ def times2(num):
 
 
 print(times2(2))
-print(times2('Not A Number'))  # "Wrong Type: string" should be printed, since non-int passed to decorated function
+print(times2('Not A Number'))  # "Wrong Type: string" should be printed,
+# since non-int passed to decorated function
 
 
 @type_check(str)
