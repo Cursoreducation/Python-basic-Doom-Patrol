@@ -40,7 +40,7 @@ def user_add():
     except ValueError:
         logging.critical("JSONDecodeError")
         with open(Config.PATH_TO_USERS_FILE, "w") as write_file:
-            write_file.write(json.dumps("[]"))
+            write_file.write(json.dumps([]))
         all_users_data = []
     finally:
         pass
