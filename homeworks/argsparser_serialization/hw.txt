@@ -1,0 +1,45 @@
+1. Написати програму яка буде зберігати username, email, status як boolean (True/False) в файл json при виклику з командного рядка.
+    <your_program_name>.py {-u or --username} {-e or --email} {-s or --status}
+    Програма повинна перевірити наявність такого користувача перед тим як додати його у файл, перевірка за email and username,
+    якщо такий користувач існує вивести помилку.
+1.a
+    Структура файлу:
+    [
+       {
+          "username":"",
+          "email":"",
+          "status":"True|False"
+       },
+       {
+          "username":"",
+          "email":"",
+          "status":"True|False"
+       }
+    ]
+
+1.b*
+    Структура файлу:
+    {
+      "users": {
+        "True":[
+          {
+            "username": "",
+            "email": ""
+          },
+          {
+            "username": "",
+            "email": ""
+          }
+        ],
+        "False": [
+          {
+            "username": "",
+            "email": ""
+          },
+          {
+            "username": "",
+            "email": ""
+          }
+        ]
+      }
+    }
