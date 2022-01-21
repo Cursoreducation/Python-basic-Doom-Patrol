@@ -29,7 +29,7 @@ def check_user_exists(users_data, user):
     for users in users_data:
         if user['username'] == users['username'] or \
                 user['email'] == users['email']:
-            return true
+            return True
 
     return False
 
@@ -59,7 +59,7 @@ def add_user(user):
     if not check_user_exists(users_data, user):
         users_data.append(user)
         with open('users.json', 'w') as write_to_file:
-            write_to_file.write(json.dumps(users_data))
+            write_to_file.write(json.dumps(users_data, indent=4, sort_keys=True))
     else:
         raise ("User with username {user['username']} or"
                " email {user['email']} already exist!")
