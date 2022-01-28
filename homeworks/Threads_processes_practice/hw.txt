@@ -1,0 +1,5 @@
+1. Create a script that should find the lines by provided pattern in the provided path directory with recursion* and threads.
+
+*(it means if the directory has other directories, the script should get all the info from them as well)
+
+2. Resolve the second (2b.) task from practice With multithreading

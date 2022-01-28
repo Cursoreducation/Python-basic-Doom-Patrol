@@ -1,0 +1,6 @@
+1. Write the method that returns the number of threads currently in execution.
+Also, prepare the method that will be executed with threads and run during the first method counting.
+(multithreading)
+
+2. Write a program that will calculate two quadratic equations (6x² + 11x - 35 = 0. and 5x² - 2x - 9 = 0.)
+at the same time, set all the parameters of the equation in variables. (multiprocessing)
