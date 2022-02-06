@@ -4,6 +4,8 @@ import time
 from threading import Thread
 from concurrent.futures import ThreadPoolExecutor
 
+from pathlib import Path
+
 #1. Create a script that should find the lines by provided pattern in
 # the provided path directory with recursion* and threads. *(it means
 # if the directory has other directories, the script should get all the info
@@ -16,17 +18,10 @@ RESULT_USER = 'user.txt'
 RESULT_EMAIL = 'email.txt'
 
 
-def get_path():
-    # get current directory
-    path = os.getcwd()
-    # path for search in parent dir
-    hd = os.path.abspath(os.path.join(path, os.pardir)) + "/**/*.txt"
-    return hd
-
-
 def find_by_pattern(pattern):
     lines_container = []
-    for filename in glob.iglob(get_path(), recursive=True):
+    path = "../**/*.txt"
+    for filename in glob.iglob(path, recursive=True):
         with open(filename) as file:
             for line in file:
                 if pattern in line:
@@ -49,11 +44,6 @@ if __name__ == '__main__':
     stop = time.time() - start
     print(stop)
 
-    start = time.time()
-    write_to_file(find_by_pattern(SEARCH_USER), RESULT_USER)
-    write_to_file(find_by_pattern(SEARCH_EMAIL), RESULT_EMAIL)
-    stop = time.time() - start
-    print(stop)
 
 
 
