@@ -3,8 +3,9 @@
 # multiplied by two
 def double_result(inner_func):
     # return function result multiplied by two
-    def inner(*args):
-        return 2 * inner_func(args[0], args[1])
+    def inner(a, b):
+        res = inner_func(a, b)
+        return 2 * res
 
     return inner
 
