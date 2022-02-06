@@ -10,18 +10,18 @@ from concurrent.futures import ThreadPoolExecutor
 # from them as well)
 
 SEARCH_USER = "user"
-SEARCH_PASSWORD = "password"
 SEARCH_EMAIL = "email"
 
 RESULT_USER = 'user.txt'
-RESULT_PASSWORD = 'password.txt'
 RESULT_EMAIL = 'email.txt'
 
 
 def get_path():
-    hd = os.path.expanduser('~')
-    hd_search_path = hd + "/**/*.txt"
-    return hd_search_path
+    # get current directory
+    path = os.getcwd()
+    # path for search in parent dir
+    hd = os.path.abspath(os.path.join(path, os.pardir)) + "/**/*.txt"
+    return hd
 
 
 def find_by_pattern(pattern):
@@ -43,16 +43,14 @@ def write_to_file(lines_container, file_name):
 
 if __name__ == '__main__':
     start = time.time()
-    with ThreadPoolExecutor(max_workers=5) as pool:
+    with ThreadPoolExecutor(max_workers=2) as pool:
         pool.submit(write_to_file(find_by_pattern(SEARCH_USER), RESULT_USER))
-        pool.submit(write_to_file(find_by_pattern(SEARCH_PASSWORD), RESULT_PASSWORD))
         pool.submit(write_to_file(find_by_pattern(SEARCH_EMAIL), RESULT_EMAIL))
     stop = time.time() - start
     print(stop)
 
     start = time.time()
     write_to_file(find_by_pattern(SEARCH_USER), RESULT_USER)
-    write_to_file(find_by_pattern(SEARCH_PASSWORD), RESULT_PASSWORD)
     write_to_file(find_by_pattern(SEARCH_EMAIL), RESULT_EMAIL)
     stop = time.time() - start
     print(stop)
